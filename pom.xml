@@ -11,6 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>FoodDeliverySystem</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>FoodDeliverySystem</name>
 	<description>Demo project for Spring Boot</description>
 
