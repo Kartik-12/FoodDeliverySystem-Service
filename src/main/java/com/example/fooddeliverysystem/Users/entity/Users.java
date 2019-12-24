@@ -19,42 +19,51 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table
-@JsonIgnoreProperties(ignoreUnknown=true)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Users {
 
-	@Id@GeneratedValue(strategy=GenerationType.AUTO)
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int userId;
 	@Column
 	private String mobileNo;
 	@Column
 	private String password;
 	@OneToOne
-	@JoinColumn(name="role_id")
+	@JoinColumn(name = "role_id")
 	private Roles roles;
+
 	public int getUserId() {
 		return userId;
 	}
+
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	
+
 	public String getMobileNo() {
 		return mobileNo;
 	}
+
 	public void setMobileNo(String mobileNo) {
 		this.mobileNo = mobileNo;
 	}
+
 	public String getPassword() throws IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException {
 		return this.password;
 	}
-	public void setPassword(String password) throws UnsupportedEncodingException, IllegalBlockSizeException, BadPaddingException {
+
+	public void setPassword(String password)
+			throws UnsupportedEncodingException, IllegalBlockSizeException, BadPaddingException {
 		this.password = password;
 	}
+
 	public Roles getRoles() {
 		return roles;
 	}
+
 	public void setRoles(Roles roles) {
 		this.roles = roles;
 	}
-	
+
 }
