@@ -45,7 +45,7 @@ public class Users {
 		this.mobileNo = mobileNo;
 	}
 	public String getPassword() throws IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException {
-		return EncryptDecrypt.decrypt(password);
+		return this.password;
 	}
 	public void setPassword(String password) throws UnsupportedEncodingException, IllegalBlockSizeException, BadPaddingException {
 		this.password = password;

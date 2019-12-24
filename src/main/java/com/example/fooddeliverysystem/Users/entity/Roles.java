@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown=true)
 public class Roles {
 
-	@Id
+	@Id@GeneratedValue(strategy=GenerationType.AUTO)
 	private int roleId;
 	
 	@Column

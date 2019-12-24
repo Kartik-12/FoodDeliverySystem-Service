@@ -16,7 +16,7 @@ public class EncryptDecrypt {
 	private static Cipher ecipher;
     private static Cipher dcipher;
     private static SecretKey key;
-    EncryptDecrypt()
+    public EncryptDecrypt()
     {
     	   try {
 			key=KeyGenerator.getInstance("DES").generateKey();
@@ -32,7 +32,7 @@ public class EncryptDecrypt {
     		
     }
  
-	public static String encrypt(String str) throws UnsupportedEncodingException, IllegalBlockSizeException, BadPaddingException
+	public  String encrypt(String str) throws UnsupportedEncodingException, IllegalBlockSizeException, BadPaddingException
     {
     	byte[] utf8=str.getBytes("UTF8");
     	byte[] enc = ecipher.doFinal(utf8);
