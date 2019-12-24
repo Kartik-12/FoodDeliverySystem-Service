@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,7 +19,8 @@ public class Users {
 	private int mobileNo;
 	@Column
 	private String password;
-	@Column
+	@OneToOne
+	@JoinColumn(name="role_id")
 	private Roles roleId;
 	public int getUserId() {
 		return userId;
