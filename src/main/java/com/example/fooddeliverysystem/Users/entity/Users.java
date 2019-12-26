@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,7 +29,7 @@ public class Users {
 	private String mobileNo;
 	@Column
 	private String password;
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="role_id")
 	private Roles roles;
 	public int getUserId() {
