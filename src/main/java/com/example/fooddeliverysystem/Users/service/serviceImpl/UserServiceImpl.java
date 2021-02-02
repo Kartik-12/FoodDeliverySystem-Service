@@ -5,6 +5,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import com.example.fooddeliverysystem.Users.dao.UserDao;
@@ -28,6 +29,12 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<Users> getallusers() {
 		return userDao.findAll();
+	}
+
+	@Override
+	public Users getuserbyId(String mobileNo) {
+		
+		return userDao.getuserbyId(mobileNo);
 	}
 
 }
